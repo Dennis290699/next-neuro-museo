@@ -1,7 +1,20 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { BookOpen, Clock, TrendingUp, Users, Sparkles, ArrowRight, Zap, Search } from "lucide-react"
+import {
+  BookOpen,
+  Clock,
+  TrendingUp,
+  Users,
+  Sparkles,
+  ArrowRight,
+  Zap,
+  Search,
+  Brain,
+  BarChart,
+  PlayCircle,
+  Download,
+} from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,6 +22,15 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { getAllSections, getRecentArticles, searchArticles, getArticlePath } from "@/lib/docs"
+
+// Mapa de iconos para las secciones
+const sectionIconMap = {
+  BookOpen: BookOpen,
+  Brain: Brain,
+  BarChart: BarChart,
+  PlayCircle: PlayCircle,
+  Download: Download,
+}
 
 export default function DocsPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -28,6 +50,12 @@ export default function DocsPage() {
         behavior: "smooth",
       })
     }, 100)
+  }
+
+  // Función para obtener el componente de icono correcto
+  const getIconComponent = (iconName: string) => {
+    const IconComponent = sectionIconMap[iconName as keyof typeof sectionIconMap] || BookOpen
+    return IconComponent
   }
 
   return (
@@ -132,7 +160,7 @@ export default function DocsPage() {
               asChild
               variant="outline"
               size="lg"
-              className="px-8 py-3 rounded-full border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 shadow-lg"
+              className="px-8 py-3 rounded-full border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 shadow-lg bg-white"
             >
               <Link href="/demo" className="flex items-center space-x-2">
                 <Zap className="w-5 h-5" />
@@ -249,6 +277,10 @@ export default function DocsPage() {
                     "from-orange-500 to-red-500",
                     "from-indigo-500 to-purple-500",
                   ]
+
+                  // Obtener el componente de icono correcto para esta sección
+                  const IconComponent = getIconComponent(section.icon)
+
                   return (
                     <motion.div
                       key={section.id}
@@ -263,9 +295,9 @@ export default function DocsPage() {
                             <div
                               className={`w-14 h-14 bg-gradient-to-br ${colors[index % colors.length]} rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300`}
                             >
-                              <BookOpen className="w-7 h-7 text-white" />
+                              <IconComponent className="w-7 h-7 text-white" />
                             </div>
-                            <CardTitle className="text-blue-600 text-xl lg:text-2xl group-hover:text-blue-600 transition-colors duration-300">
+                            <CardTitle className="text-xl lg:text-2xl group-hover:text-blue-600 transition-colors duration-300">
                               {section.title}
                             </CardTitle>
                             <CardDescription className="text-base lg:text-lg text-gray-600 leading-relaxed">
@@ -323,7 +355,7 @@ export default function DocsPage() {
                       <Card className="hover:shadow-xl transition-all duration-500 bg-white border border-gray-200 group-hover:border-blue-300">
                         <CardHeader className="p-6 lg:p-8">
                           <div className="flex items-start justify-between mb-4">
-                            <CardTitle className="text-blue-600 text-lg lg:text-xl group-hover:text-blue-600 transition-colors duration-300 flex-1 pr-4">
+                            <CardTitle className="text-lg lg:text-xl group-hover:text-blue-600 transition-colors duration-300 flex-1 pr-4">
                               {article.title}
                             </CardTitle>
                             <div className="flex items-center space-x-1 text-gray-500 flex-shrink-0">

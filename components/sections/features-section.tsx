@@ -73,7 +73,7 @@ export function FeaturesSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full border-gray-200 bg-white hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
                   <CardHeader className="p-4 sm:p-6">
                     <div
                       className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4`}

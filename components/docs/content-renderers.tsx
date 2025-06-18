@@ -52,10 +52,46 @@ export function ContentRenderer({ content }: { content: DocContent[] }) {
 }
 
 function TextRenderer({ data }: { data: any }) {
+  // Procesar el contenido markdown
+  const processMarkdown = (content: string) => {
+    // Convertir títulos
+    content = content.replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-gray-900 mb-4 mt-6">$1</h3>')
+    content = content.replace(/^## (.*$)/gm, '<h2 class="text-2xl font-bold text-gray-900 mb-6 mt-8">$1</h2>')
+    content = content.replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold text-gray-900 mb-8 mt-10">$1</h1>')
+
+    // Convertir texto en negrita
+    content = content.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
+
+    // Convertir listas con viñetas
+    content = content.replace(/^- (.*$)/gm, '<li class="ml-4 mb-2">• $1</li>')
+    content = content.replace(/(<li.*<\/li>)/s, '<ul class="space-y-2 mb-6">$1</ul>')
+
+    // Convertir listas numeradas
+    content = content.replace(/^\d+\. (.*$)/gm, '<li class="ml-4 mb-2">$1</li>')
+
+    // Convertir párrafos
+    content = content.replace(
+      /\n\n/g,
+      '</p><p class="text-gray-700 leading-relaxed text-base lg:text-lg font-light mb-4">',
+    )
+    content = '<p class="text-gray-700 leading-relaxed text-base lg:text-lg font-light mb-4">' + content + "</p>"
+
+    // Convertir código inline
+    content = content.replace(
+      /`([^`]+)`/g,
+      '<code class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono">$1</code>',
+    )
+
+    return content
+  }
+
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="prose prose-gray max-w-none">
-      <p className="text-gray-700 leading-relaxed text-base lg:text-lg font-light tracking-wide">{data.content}</p>
-    </motion.div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="prose prose-gray max-w-none"
+      dangerouslySetInnerHTML={{ __html: processMarkdown(data.content) }}
+    />
   )
 }
 

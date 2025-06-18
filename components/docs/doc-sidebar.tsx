@@ -22,12 +22,13 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { getAllSections, searchArticles } from "@/lib/docs"
 
-const iconMap = {
-  BookOpen,
-  Brain,
-  BarChart,
-  PlayCircle,
-  Download,
+// Mapa de iconos para las secciones
+const sectionIconMap = {
+  BookOpen: BookOpen,
+  Brain: Brain,
+  BarChart: BarChart,
+  PlayCircle: PlayCircle,
+  Download: Download,
 }
 
 interface DocSidebarProps {
@@ -65,6 +66,12 @@ function SidebarContent({
     if (onLinkClick) {
       onLinkClick()
     }
+  }
+
+  // Función para obtener el componente de icono correcto
+  const getIconComponent = (iconName: string) => {
+    const IconComponent = sectionIconMap[iconName as keyof typeof sectionIconMap] || BookOpen
+    return IconComponent
   }
 
   return (
@@ -156,7 +163,9 @@ function SidebarContent({
             className="space-y-3"
           >
             {sections.map((section, sectionIndex) => {
-              const Icon = iconMap[section.icon as keyof typeof iconMap]
+              // Obtener el icono correcto para esta sección
+              const IconComponent = getIconComponent(section.icon)
+
               const isExpanded = expandedSections.includes(section.id)
               const isCurrentSection = currentSection === section.id
 
@@ -185,7 +194,7 @@ function SidebarContent({
                             : "bg-gray-100 group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-purple-600"
                         }`}
                       >
-                        <Icon
+                        <IconComponent
                           className={`w-5 h-5 transition-colors duration-300 ${
                             isCurrentSection ? "text-white" : "text-gray-600 group-hover:text-white"
                           }`}

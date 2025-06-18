@@ -1,7 +1,19 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Calendar, Clock, Tag, Share2, BookOpen, Users } from "lucide-react"
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  Tag,
+  Share2,
+  BookOpen,
+  Users,
+  Brain,
+  BarChart,
+  PlayCircle,
+  Download,
+} from "lucide-react"
 import Link from "next/link"
 import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
@@ -9,6 +21,15 @@ import { Badge } from "@/components/ui/badge"
 import { ContentRenderer } from "@/components/docs/content-renderers"
 import { ArticleNavigation } from "@/components/docs/article-navigation"
 import { getSectionById, getArticleById } from "@/lib/docs"
+
+// Mapa de iconos para las secciones
+const sectionIconMap = {
+  BookOpen: BookOpen,
+  Brain: Brain,
+  BarChart: BarChart,
+  PlayCircle: PlayCircle,
+  Download: Download,
+}
 
 interface DocPageProps {
   params: {
@@ -34,6 +55,36 @@ export default function DocPage({ params }: DocPageProps) {
         behavior: "smooth",
       })
     }, 100)
+  }
+
+  // Función para obtener el componente de icono correcto
+  const getIconComponent = (iconName: string) => {
+    const IconComponent = sectionIconMap[iconName as keyof typeof sectionIconMap] || BookOpen
+    return IconComponent
+  }
+
+  // Ensure params.slug exists and has at least one element
+  if (!params.slug || params.slug.length === 0) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-purple-100">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
+        >
+          <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <BookOpen className="w-8 h-8 text-white" />
+          </div>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Página no encontrada</h1>
+          <p className="text-gray-600 mb-6">La página que buscas no existe.</p>
+          <Link href="/docs">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+              Volver a documentación
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
+    )
   }
 
   if (!section) {
@@ -81,6 +132,9 @@ export default function DocPage({ params }: DocPageProps) {
       </div>
     )
   }
+
+  // Obtener el icono correcto para la sección actual
+  const SectionIcon = section ? getIconComponent(section.icon) : BookOpen
 
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-100 relative overflow-hidden">
@@ -179,7 +233,7 @@ export default function DocPage({ params }: DocPageProps) {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="bg-white hover:bg-gray-50 hover:text-blue-600 rounded-full border border-gray-200"
+                      className="bg-white hover:bg-gray-50 rounded-full border border-gray-200"
                     >
                       <Share2 className="w-4 h-4 mr-2" />
                       <span className="font-medium">Compartir</span>
@@ -196,7 +250,8 @@ export default function DocPage({ params }: DocPageProps) {
                         {article.tags.map((tag) => (
                           <Badge
                             key={tag}
-                            className="text-blue-600 bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300"
+                            variant="secondary"
+                            className="bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300"
                           >
                             {tag}
                           </Badge>
@@ -233,7 +288,7 @@ export default function DocPage({ params }: DocPageProps) {
                   >
                     <div className="flex items-center space-x-4 mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
-                        <BookOpen className="w-8 h-8 text-white" />
+                        <SectionIcon className="w-8 h-8 text-white" />
                       </div>
                       <div>
                         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{section.title}</h1>
