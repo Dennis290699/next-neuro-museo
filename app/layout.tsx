@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Modelo de inteligencia artificial para la detección de objetos y reconstrucción en 2D de arte histórico",
   keywords: ["IA", "Arte", "Restauración", "Inteligencia Artificial", "Detección de Objetos"],
-    generator: 'v0.dev'
+    generator: 'Neuro-Museo'
 }
 
 export default function RootLayout({
