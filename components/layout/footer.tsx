@@ -101,7 +101,7 @@ export function Footer() {
               </div>
 
               <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-                Revolucionamos la restauración artística mediante inteligencia artificial avanzada. Detectamos,
+                Revolucionamos la reconstrucción artística mediante inteligencia artificial avanzada. Detectamos,
                 analizamos y reconstruimos objetos artísticos con precisión excepcional, preservando el patrimonio
                 cultural para las futuras generaciones.
               </p>
@@ -111,7 +111,7 @@ export function Footer() {
                 <span className="text-gray-300">
                   Desarrollado con pasión por{" "}
                   <span className="font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Grupo 2
+                    NeuroMuseo
                   </span>
                 </span>
               </div>
@@ -189,7 +189,7 @@ export function Footer() {
               <ul className="space-y-4">
                 {[
                   { name: "Documentación", href: "/docs", icon: ExternalLink },
-                  { name: "Probar Modelo", href: "/demo", icon: Zap },
+                  { name: "Probar Modelo", href: "https://huggingface.co/spaces/Ab3l54/unet-gan-demo-v2", icon: Zap },
                   { name: "GitHub", href: "#", icon: Github },
                   { name: "Soporte", href: "#", icon: Mail },
                 ].map((item) => {
@@ -225,8 +225,8 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <a href="mailto:grupo2@neuromuseo.com" className="hover:text-white transition-colors">
-                      grupo2@neuromuseo.com
+                    <a href="mailto:grupo@neuromuseo.com" className="hover:text-white transition-colors">
+                      grupo@neuromuseo.com
                     </a>
                   </div>
                 </div>

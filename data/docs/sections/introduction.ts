@@ -39,7 +39,7 @@ Esta combinación permite no solo restaurar obras dañadas, sino también predec
         {
           type: "image",
           data: {
-            src: "/placeholder.svg?height=400&width=800",
+            src: "/images.jpg",
             alt: "Arquitectura del sistema Neuro-Museo",
             caption: "Arquitectura general del sistema de restauración con IA",
           },

@@ -1,32 +1,38 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, Database, Layers, Zap } from "lucide-react"
+import { Brain, Database, Layers, Zap, VenetianMask } from "lucide-react"
 
 const technologies = [
   {
     icon: Brain,
     title: "Deep Learning",
-    description: "Redes neuronales convolucionales especializadas en visión por computadora",
-    tech: ["TensorFlow", "PyTorch", "OpenCV"],
+    description: "Reconstrucción de imágenes con UNet y GANs (inspirado en GauGAN) para restauración artística.",
+    tech: ["TensorFlow", "Keras", "OpenCV"],
   },
   {
     icon: Database,
     title: "Procesamiento de Datos",
-    description: "Pipeline optimizado para el manejo de grandes volúmenes de imágenes",
-    tech: ["NumPy", "Pandas", "Scikit-learn"],
+    description: "Pipeline optimizado para el preprocesamiento de imágenes artísticas y generación de datasets personalizados",
+    tech: ["NumPy", "Pandas", "PIL", "Scikit-learn"],
   },
   {
     icon: Layers,
     title: "Arquitectura Modular",
-    description: "Sistema escalable con componentes independientes y reutilizables",
-    tech: ["Microservicios", "APIs REST", "Docker"],
+    description: "Sistema escalable para entrenamiento, inferencia y visualización de resultados",
+    tech: ["Google Colab", "Tensorboard"],
   },
   {
     icon: Zap,
     title: "Optimización",
-    description: "Algoritmos optimizados para rendimiento en tiempo real",
-    tech: ["CUDA", "TensorRT", "ONNX"],
+    description: "Técnicas de regularización y ajuste dinámico del aprendizaje para acelerar entrenamiento en GPU",
+    tech: ["Early Stopping", "ReduceLROnPlateau"],
+  },
+  {
+    icon: VenetianMask,
+    title: "IA Aplicada al Arte",
+    description: "Modelos diseñados para restaurar obras pictóricas con fidelidad a estilos históricos",
+    tech: ["UNet", "GAN", "VGG16", "SSIM"],
   },
 ]
 

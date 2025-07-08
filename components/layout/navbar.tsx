@@ -61,7 +61,7 @@ export function Navbar() {
                 asChild
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <Link href="/demo" className="flex items-center space-x-2">
+                <Link href="https://huggingface.co/spaces/Ab3l54/unet-gan-demo-v2" className="flex items-center space-x-2">
                   <TestTube className="w-4 h-4" />
                   <span>Probar Modelo</span>
                 </Link>
@@ -157,7 +157,7 @@ export function Navbar() {
 
                     {/* Featured CTA Button */}
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                      <Link href="/demo" className="block" onClick={closeMobileMenu}>
+                      <Link href="https://huggingface.co/spaces/Ab3l54/unet-gan-demo-v2" className="block" onClick={closeMobileMenu}>
                         <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
                           {/* Background Pattern */}
                           <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />

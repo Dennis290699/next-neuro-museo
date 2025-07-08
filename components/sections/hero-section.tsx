@@ -105,7 +105,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-700 mt-2"
               >
-                Restaurador de Arte
+                Reconstrucción de imágenes
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -124,6 +124,8 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto xl:mx-0"
             >
+              Descubre cómo la inteligencia artificial transforma el arte dañado en obras completas. IA entrenada para observar, entender y reconstruir como un artista.
+              
               Revolucionamos la restauración artística mediante{" "}
               <span className="font-semibold text-blue-600">inteligencia artificial avanzada</span>. Detectamos,
               analizamos y reconstruimos objetos en 2D con{" "}
@@ -143,7 +145,7 @@ export function HeroSection() {
                   size="lg"
                   className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
                 >
-                  <Link href="/demo" className="flex items-center justify-center space-x-2 sm:space-x-3">
+                  <Link href="https://huggingface.co/spaces/Ab3l54/unet-gan-demo-v2" className="flex items-center justify-center space-x-2 sm:space-x-3">
                     <motion.div
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -152,19 +154,6 @@ export function HeroSection() {
                     </motion.div>
                     <span className="font-semibold text-sm sm:text-base">Probar Modelo</span>
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </Link>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 shadow-lg"
-                >
-                  <Link href="/docs" className="flex items-center justify-center space-x-2">
-                    <Play className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className="font-semibold text-sm sm:text-base">Ver Demo</span>
                   </Link>
                 </Button>
               </motion.div>

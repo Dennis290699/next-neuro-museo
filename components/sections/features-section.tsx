@@ -8,15 +8,13 @@ const features = [
   {
     icon: Eye,
     title: "Detección Inteligente",
-    description:
-      "Algoritmos avanzados de visión por computadora para identificar objetos artísticos con precisión excepcional.",
+    description: "Generación artística basada en aprendizaje automático. Inspirado en GauGAN, recrea texturas, colores y detalles con realismo.",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: ImageIcon,
     title: "Reconstrucción 2D",
-    description:
-      "Generación automática de imágenes restauradas basadas en referencias históricas y patrones aprendidos.",
+    description: "Redes Neuronales profundas, Restauramos estructuras visuales utilizando UNet y GANs.",
     color: "from-purple-500 to-pink-500",
   },
   {
@@ -34,13 +32,13 @@ const features = [
   {
     icon: Zap,
     title: "Procesamiento Rápido",
-    description: "Resultados en tiempo real con optimización de rendimiento para grandes volúmenes de datos.",
+    description: "Entrenado con Redes convolucionales avanzadas.",
     color: "from-yellow-500 to-orange-500",
   },
   {
     icon: Shield,
     title: "Calidad Garantizada",
-    description: "Validación automática de resultados con métricas de calidad y precisión.",
+    description: "Calidad certificada, 95% de precisión validada con métricas SSIM y PSNR.",
     color: "from-indigo-500 to-purple-500",
   },
 ]
@@ -56,9 +54,9 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Características Principales</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Características Técnicas</h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Tecnología de vanguardia para la restauración digital de arte histórico
+          Preserva el pasado con tecnología del futuro.
           </p>
         </motion.div>
 

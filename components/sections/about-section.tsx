@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 import { CheckCircle, Target, Lightbulb, Users } from "lucide-react"
 
 const highlights = [
-  "Detección automática de objetos artísticos",
-  "Reconstrucción basada en IA avanzada",
-  "Preservación de técnicas históricas",
-  "Interfaz intuitiva y profesional",
+  "Reconstrucción estructural con redes UNet",
+  "Generación de detalles visuales con GAN avanzada",
+  "Preservación digital de técnicas artísticas históricas",
+  "Interfaz accesible y enfocada en la experiencia del usuario",
 ]
 
 export function AboutSection() {
@@ -29,19 +29,19 @@ export function AboutSection() {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Innovación en Restauración Digital
+              Innovación en Reconstrucción Digital
             </h2>
 
             <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-              Neuro-Museo representa un avance revolucionario en la preservación del patrimonio artístico. Nuestro
-              modelo de inteligencia artificial ha sido entrenado específicamente para detectar, analizar y reconstruir
-              objetos artísticos con una precisión sin precedentes.
+            Neuro-Museo representa un avance disruptivo en la conservación digital artística. Nuestro sistema, 
+            impulsado por redes neuronales profundas como UNet y una red GAN inspirada en GauGAN, ha sido 
+            entrenado para detectar, analizar y reconstruir digitalmente obras de arte o imágenes deterioradas.
             </p>
 
             <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              Utilizando técnicas avanzadas de visión por computadora y aprendizaje profundo, el sistema puede
-              identificar patrones, texturas y elementos compositivos para generar reconstrucciones fieles a las
-              técnicas originales.
+            A través del uso de visión por computadora y aprendizaje profundo, el modelo identifica patrones visuales, 
+            formas, colores y texturas, permitiendo generar reconstrucciones que respetan fielmente el estilo y técnica 
+            original del autor.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">

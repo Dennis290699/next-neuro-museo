@@ -19,7 +19,7 @@ export function TeamSection() {
             <span className="text-xs sm:text-sm font-medium text-gray-700">Nuestro Equipo</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Grupo 2</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Grupo NeuroMuseo</h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Un equipo multidisciplinario dedicado a la innovación en restauración digital
           </p>
@@ -38,7 +38,7 @@ export function TeamSection() {
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Desarrollo IA</h3>
             <p className="text-sm sm:text-base text-gray-600">
-              Especialistas en machine learning y visión por computadora
+              Deep Learning, Redes Neuronales, GANs, UNet
             </p>
           </motion.div>
 
@@ -69,7 +69,7 @@ export function TeamSection() {
               <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Investigación</h3>
-            <p className="text-sm sm:text-base text-gray-600">Investigadores en preservación digital del patrimonio</p>
+            <p className="text-sm sm:text-base text-gray-600">Preservación digital artística</p>
           </motion.div>
         </div>
 

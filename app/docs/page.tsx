@@ -228,7 +228,7 @@ export default function DocsPage() {
                 { icon: BookOpen, label: "Secciones", value: sections.length, color: "from-blue-500 to-blue-600" },
                 { icon: TrendingUp, label: "Precisión", value: "95%", color: "from-green-500 to-emerald-600" },
                 { icon: Clock, label: "Procesamiento", value: "2.3s", color: "from-purple-500 to-purple-600" },
-                { icon: Users, label: "Desarrolladores", value: "Grupo 2", color: "from-orange-500 to-red-500" },
+                { icon: Users, label: "Desarrolladores", value: "NeuroMuseo", color: "from-orange-500 to-red-500" },
               ].map((stat, index) => {
                 const Icon = stat.icon
                 return (

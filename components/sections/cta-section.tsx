@@ -44,7 +44,7 @@ export function CTASection() {
               size="lg"
               className="w-full sm:w-auto bg-white text-blue-600 hover:bg-gray-100 px-6 sm:px-8 py-3 rounded-full font-semibold"
             >
-              <Link href="/demo" className="flex items-center justify-center space-x-2">
+              <Link href="https://huggingface.co/spaces/Ab3l54/unet-gan-demo-v2" className="flex items-center justify-center space-x-2">
                 <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Probar Modelo</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -52,7 +52,7 @@ export function CTASection() {
             </Button>
             <Button
               asChild
-              variant="outline"
+              variant="default"
               size="lg"
               className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 px-6 sm:px-8 py-3 rounded-full"
             >
@@ -71,7 +71,7 @@ export function CTASection() {
             className="mt-8 sm:mt-12 text-blue-200 text-sm"
           >
             <p>
-              Desarrollado con ❤️ por <span className="font-semibold text-white">Grupo 2</span>
+              Desarrollado con ❤️ por <span className="font-semibold text-white">NeuroMuseo</span>
             </p>
           </motion.div>
         </motion.div>
