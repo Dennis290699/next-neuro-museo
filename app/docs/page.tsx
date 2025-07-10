@@ -162,9 +162,9 @@ export default function DocsPage() {
               size="lg"
               className="px-8 py-3 rounded-full border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 shadow-lg bg-white"
             >
-              <Link href="/demo" className="flex items-center space-x-2">
+              <Link href="https://huggingface.co/spaces/Ab3l54/unet-gan-demo-v2" className="flex items-center space-x-2">
                 <Zap className="w-5 h-5" />
-                <span>Probar Demo</span>
+                <span>Probar Modelo</span>
               </Link>
             </Button>
           </motion.div>
