@@ -157,6 +157,20 @@ export function HeroSection() {
                   </Link>
                 </Button>
               </motion.div>
+
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 shadow-lg"
+                >
+                  <Link href="/feedback" className="flex items-center justify-center space-x-2">
+                    <Play className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span className="font-semibold text-sm sm:text-base">Dar Opinión</span>
+                  </Link>
+                </Button>
+              </motion.div>
             </motion.div>
 
             {/* Stats */}
