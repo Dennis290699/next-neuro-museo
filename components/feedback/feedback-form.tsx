@@ -138,7 +138,7 @@ export function FeedbackForm({
                         transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                         className="w-6 h-6 border-3 border-white border-t-transparent rounded-full"
                       />
-                      <span>Enviando tu feedback...</span>
+                      <span>Enviando su opinión...</span>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -149,8 +149,7 @@ export function FeedbackForm({
                       className="flex items-center space-x-3"
                     >
                       <Send className="w-6 h-6" />
-                      <span>Enviar Feedback</span>
-                      <Zap className="w-5 h-5" />
+                      <span>Enviar</span>
                     </motion.div>
                   )}
                 </AnimatePresence>
