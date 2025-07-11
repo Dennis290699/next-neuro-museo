@@ -3,10 +3,11 @@
 import type React from "react"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { Send, Zap, Heart, User, GraduationCap, Building } from "lucide-react"
+import { Send, Zap, Heart, User, GraduationCap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FormField } from "./form-field"
+import { FacultySelector } from "./faculty-selector"
 import { OpinionSelector } from "./opinion-selector"
 
 interface FormData {
@@ -19,6 +20,7 @@ interface FormData {
 interface FeedbackFormProps {
   formData: FormData
   onInputChange: (field: string, value: string) => void
+  onFacultyChange: (faculty: string) => void
   onOpinionChange: (opinion: "Regular" | "Bueno" | "Excelente") => void
   onSubmit: (e: React.FormEvent) => void
   isSubmitting: boolean
@@ -28,6 +30,7 @@ interface FeedbackFormProps {
 export function FeedbackForm({
   formData,
   onInputChange,
+  onFacultyChange,
   onOpinionChange,
   onSubmit,
   isSubmitting,
@@ -84,18 +87,8 @@ export function FeedbackForm({
               disabled={isSubmitting}
             />
 
-            {/* Facultad */}
-            <FormField
-              id="faculty"
-              label="Facultad"
-              placeholder="Ej: Facultad de Ingeniería"
-              value={formData.faculty}
-              onChange={(value) => onInputChange("faculty", value)}
-              icon={Building}
-              iconColor="from-green-500 to-emerald-600"
-              delay={0.3}
-              disabled={isSubmitting}
-            />
+            {/* Facultad - Selector desplegable */}
+            <FacultySelector value={formData.faculty} onChange={onFacultyChange} disabled={isSubmitting} delay={0.3} />
 
             {/* Opinión */}
             <OpinionSelector value={formData.opinion} onChange={onOpinionChange} disabled={isSubmitting} delay={0.4} />

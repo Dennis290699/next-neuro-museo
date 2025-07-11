@@ -5,12 +5,12 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-// Tipos para TypeScript
+// Tipos para TypeScript actualizados
 export interface UserFeedback {
   id?: number
   name: string
   career: string
-  faculty: string
+  faculty: string // Ahora es string para coincidir con el esquema de DB
   opinion: "Regular" | "Bueno" | "Excelente"
 }
 

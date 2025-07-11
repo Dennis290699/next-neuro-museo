@@ -45,6 +45,11 @@ export default function FeedbackPage() {
     setError(null)
   }
 
+  const handleFacultyChange = (faculty: string) => {
+    setFormData((prev) => ({ ...prev, faculty }))
+    setError(null)
+  }
+
   const handleOpinionChange = (opinion: "Regular" | "Bueno" | "Excelente") => {
     setFormData((prev) => ({ ...prev, opinion }))
     setError(null)
@@ -139,10 +144,10 @@ export default function FeedbackPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link href="/">
+            <Link href="/demo">
               <Button variant="ghost" size="sm" className="mb-4 text-gray-600 hover:text-gray-900 hover:bg-white/60">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Volver al inicio
+                Volver a la demo
               </Button>
             </Link>
           </motion.div>
@@ -157,6 +162,7 @@ export default function FeedbackPage() {
                 <FeedbackForm
                   formData={formData}
                   onInputChange={handleInputChange}
+                  onFacultyChange={handleFacultyChange}
                   onOpinionChange={handleOpinionChange}
                   onSubmit={handleSubmit}
                   isSubmitting={isSubmitting}
